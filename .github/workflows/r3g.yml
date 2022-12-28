@@ -113,15 +113,13 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y/d' .config
+        # sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA=y/d' .config
+        # sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y/d' .config
         #echo "自定义项=y" >> .config
         ## 测试增加内容
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config       
+        # echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config    
         echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION=y" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=y" >> .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
