@@ -111,8 +111,9 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP=y/d' .config
+        # sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT=y/d' .config
+<<<<<<< HEAD
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA=y/d' .config
@@ -122,6 +123,14 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config
 #        echo "CONFIG_FIRMWARE_INCLUDE_HTTPD=y" >> .config
+=======
+        #echo "自定义项=y" >> .config
+        ## 测试增加内容
+        echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_HTTPD=y" >> .config
+>>>>>>> parent of 9697382 (Update r3g.yml)
         echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=y" >> .config
