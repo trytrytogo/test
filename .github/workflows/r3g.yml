@@ -114,6 +114,7 @@ jobs:
         # sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT=y/d' .config
 <<<<<<< HEAD
+<<<<<<< HEAD
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA=y/d' .config
@@ -123,6 +124,14 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config
 #        echo "CONFIG_FIRMWARE_INCLUDE_HTTPD=y" >> .config
+=======
+        #echo "自定义项=y" >> .config
+        ## 测试增加内容
+        echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_HTTPD=y" >> .config
+>>>>>>> parent of 9697382 (Update r3g.yml)
 =======
         #echo "自定义项=y" >> .config
         ## 测试增加内容
