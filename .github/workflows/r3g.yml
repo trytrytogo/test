@@ -108,7 +108,7 @@ jobs:
         #sed -i '/自定义项/d' .config
         ## 测试删除无用东西
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR=y/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3=y/d' .config
+        # sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ=y/d' .config
