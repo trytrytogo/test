@@ -94,7 +94,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config #SS server
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config #DNSFORWARDER
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config #内网穿透FRPC
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config #内网穿透FRPS
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config #内网穿透FRPS
         echo "CONFIG_FIRMWARE_INCLUDE_NPC=n" >> .config #内网穿透NPS
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #阿里DDNS
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
@@ -106,7 +106,21 @@ jobs:
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
         #格式如下：
         #sed -i '/自定义项/d' .config
+        ## 测试删除无用东西
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_TCPDUMP=y/d' .config # 去掉tcpdump
         #echo "自定义项=y" >> .config
+        ## 测试增加内容
+        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config
+        # echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config    
+        # echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >> .config
+        echo "CONFIG_FIRMWARE_CPU_900MHZ=y" >> .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
