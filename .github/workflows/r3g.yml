@@ -114,6 +114,10 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP=y/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SOCAT=y/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y/d' .config #不编译ffmpeg 0.11.x
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_AUDIO=y/d' .config #不编译USB-Audio modules
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_UVC=y/d' .config #不编译UVC camera modules
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD=y/d' .config #不编译ttyd
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TCPDUMP=y/d' .config # 去掉tcpdump
         #echo "自定义项=y" >> .config
         ## 测试增加内容
