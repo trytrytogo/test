@@ -1,35 +1,35 @@
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
 name: 小米路由R3G云编译
 
-  workflow_dispatch:
-    inputs:
-      target:
-        type: choice
-        description: 'target to compile'
-        options:
-        - K2P
-        - RM2100
-        - R2100
-        - K2P-USB
-        - CR660x
-        - JCG-Q20
-        - JCG-AC860M
-        - JCG-AC876M
-        - JCG-Y2
-        - MI-MINI
-        - MI-R3G
-        - MI-R4A
-        - MI-NANO
-        - MSG1500-7615
-        - MSG1500
-        - NEWIFI3
-        - R6220
-        - RT-AC85P
-        - XY-C1
-        - RS1200P
-        - TIMECLOUD
-        - WR330
-        default: 'K2P-USB'
+workflow_dispatch:
+  inputs:
+    target:
+      type: choice
+      description: 'target to compile'
+      options:
+      - K2P
+      - RM2100
+      - R2100
+      - K2P-USB
+      - CR660x
+      - JCG-Q20
+      - JCG-AC860M
+      - JCG-AC876M
+      - JCG-Y2
+      - MI-MINI
+      - MI-R3G
+      - MI-R4A
+      - MI-NANO
+      - MSG1500-7615
+      - MSG1500
+      - NEWIFI3
+      - R6220
+      - RT-AC85P
+      - XY-C1
+      - RS1200P
+      - TIMECLOUD
+      - WR330
+      default: 'MI-R3G'
 jobs:
   build:
     runs-on: ubuntu-20.04
