@@ -61,7 +61,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: ${{ github.event.inputs.target }}
+        TNAME: ${{github.event.inputs.target}}
         KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
