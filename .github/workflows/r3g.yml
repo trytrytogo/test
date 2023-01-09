@@ -94,7 +94,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config #SS server
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config #DNSFORWARDER
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config #内网穿透FRPC
-        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config #内网穿透FRPS
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config #内网穿透FRPS
         echo "CONFIG_FIRMWARE_INCLUDE_NPC=n" >> .config #内网穿透NPS
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #阿里DDNS
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
@@ -117,7 +117,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y/d' .config #不编译ffmpeg 0.11.x
         sed -i '/CONFIG_FIRMWARE_INCLUDE_AUDIO=y/d' .config #不编译USB-Audio modules
         sed -i '/CONFIG_FIRMWARE_INCLUDE_UVC=y/d' .config #不编译UVC camera modules
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD=y/d' .config #不编译ttyd
+        # sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD=y/d' .config #不编译ttyd
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TCPDUMP=y/d' .config # 去掉tcpdump
         #echo "自定义项=y" >> .config
         ## 测试增加内容
