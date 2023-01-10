@@ -30,8 +30,14 @@ on:
         - RS1200P
         - TIMECLOUD
         - WR330
-        default: 'K2P-USB'
-
+        default: 'MI-R3G'
+      rversion:
+        type: choice
+        description: '指定版本'
+        options:
+        - 3.4
+        - 4.4
+        defaule: '3.4'
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -64,7 +70,7 @@ jobs:
       env:
         # TNAME: MI-R3G
         TNAME: ${{ github.event.inputs.target }}
-        KERNEL: 3.4
+        KERNEL: ${{ github.event.inputs.rversion }}
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -147,5 +153,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: Padavan-packages-MI-R3G
+        name: Padavan-packages-${{ github.event.inputs.target }}-${{ github.event.inputs.rversion }}
         path: /opt/images
