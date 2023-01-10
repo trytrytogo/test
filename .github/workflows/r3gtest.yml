@@ -1,20 +1,36 @@
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
 name: R3G云编译-test测试
 
-on: 
-  repository_dispatch:
+on:
   workflow_dispatch:
-  release:
-    types: [published]
-  push:
-    tags:
-    - 'v*'
-  #  branches: 
-  #    - master
-#  schedule:
-#    - cron: 0 8 * * 5
-#  watch:
-#   types: [started]
+    inputs:
+      target:
+        type: choice
+        description: 'target to compile'
+        options:
+        - K2P
+        - RM2100
+        - R2100
+        - K2P-USB
+        - CR660x
+        - JCG-Q20
+        - JCG-AC860M
+        - JCG-AC876M
+        - JCG-Y2
+        - MI-MINI
+        - MI-R3G
+        - MI-R4A
+        - MI-NANO
+        - MSG1500-7615
+        - MSG1500
+        - NEWIFI3
+        - R6220
+        - RT-AC85P
+        - XY-C1
+        - RS1200P
+        - TIMECLOUD
+        - WR330
+        default: 'K2P-USB'
 
 jobs:
   build:
@@ -46,7 +62,8 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: MI-R3G
+        # TNAME: MI-R3G
+        TNAME: ${{ github.event.inputs.target }}
         KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
